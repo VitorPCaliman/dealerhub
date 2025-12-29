@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:16
+    container_name: dealerhub-postgres
+    environment:
+      POSTGRES_DB: dealerhub
+      POSTGRES_USER: dealerhub
+      POSTGRES_PASSWORD: dealerhub
+    ports:
+      - "5433:5432"
+    volumes:
+      - dealerhub_pg:/var/lib/postgresql/data
+
+volumes:
+  dealerhub_pg:
